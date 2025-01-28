@@ -1,13 +1,27 @@
+"use client"; 
 import NavLink from "./nav-link";
+import { HomeIcon, SearchIcon, UserIcon, CameraIcon, LayoutGridIcon } from "lucide-react";
 
-export default () => {
+export default function NavBar() {
   return (
-    <nav className="flex flex-col gap-3 h-dvh border-e p-4">
-      <p className="hidden sm:block">Social App</p>
-      <NavLink ruta="/" texto="Home" />
-      <NavLink ruta="/search" texto="Search" />
-      <NavLink ruta="/create" texto="Create" />
-      <NavLink ruta="/profile" texto="Profile" />
+    <nav className="flex flex-col gap-6 sticky top-0 h-screen w-48 border-r p-4 shadow-md shadow-gray-400 dark:shadow-gray-600">
+      {/* Logo */}
+      <div className="mb-4">
+        <img
+          className="dark:invert w-28 mx-auto"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png"
+          alt="Logo"
+        />
+      </div>
+
+      {/* Links de navegación */}
+      <div className="flex flex-col gap-4">
+        <NavLink ruta="/" texto="Home" Icono={HomeIcon} />
+        <NavLink ruta="/search" texto="Search" Icono={SearchIcon} />
+        <NavLink ruta="/browse" texto="Browse" Icono={LayoutGridIcon} />
+        <NavLink ruta="/profile" texto="Profile" Icono={UserIcon} />
+        <NavLink ruta="/create" texto="Create" Icono={CameraIcon} />
+      </div>
     </nav>
   );
-};
+}

@@ -1,0 +1,155 @@
+.
+├── app
+│   ├── create
+│   │   └── page.js
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.js
+│   ├── page.js
+│   ├── profile
+│   │   └── page.js
+│   ├── search
+│   │   └── page.js
+│   └── ui
+│       ├── nav-bar.js
+│       └── nav-link.js
+├── estructura_proyecto.txt
+├── .git
+│   ├── branches
+│   ├── COMMIT_EDITMSG
+│   ├── config
+│   ├── description
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── main
+│   │       └── remotes
+│   │           └── origin
+│   │               └── main
+│   ├── objects
+│   │   ├── 00
+│   │   │   └── 4145cddf3f9db91b57b9cb596683c8eb420862
+│   │   ├── 06
+│   │   │   └── b456eeeb66c7268507cab5bac65640bce79210
+│   │   ├── 1a
+│   │   │   └── 69fd2a450afc3bf47e08b22c149190df0ffdb4
+│   │   ├── 25
+│   │   │   ├── 6aa3947f927329f3cc11c65c7dbe8145b7eb0a
+│   │   │   └── ce65d5edb766aec5aef41b759e1217ee19d5b4
+│   │   ├── 2a
+│   │   │   └── 2e4b3bf8ba1c86d96fc2f5786597ad77a0e5e9
+│   │   ├── 2c
+│   │   │   └── 02356ce94bbe4ac21eeb05c2acb60f83a9c190
+│   │   ├── 2e
+│   │   │   └── 8e1d39ab275de33926d1913fba6c576a528b2e
+│   │   ├── 3c
+│   │   │   └── bcfb39c7a8c6662851af89f6e7cd17c7bfa5f5
+│   │   ├── 46
+│   │   │   └── 78774e6d606704bce1897a5dab960cd798bf66
+│   │   ├── 4c
+│   │   │   └── 7ad64a9ccf5a23430dcbdb3c33c711ed4fcbe7
+│   │   ├── 4d
+│   │   │   └── ae3836ed18d2b3c8316666ee4398755ef0a06d
+│   │   ├── 4f
+│   │   │   └── 9f16edc593c93609f4d8ec36d0e07bec43256e
+│   │   ├── 51
+│   │   │   └── 74b28c565c285e3e312ec5178be64fbeca8398
+│   │   ├── 56
+│   │   │   └── 7f17b0d7c7fb662c16d4357dd74830caf2dccb
+│   │   ├── 5e
+│   │   │   ├── 77c395e499820e0eba7dbfd416a0214413d5fc
+│   │   │   └── f6a520780202a1d6addd833d800ccb1ecac0bb
+│   │   ├── 66
+│   │   │   └── bb426ffe6ec9f5d829fccff91afcf9f2d16810
+│   │   ├── 6a
+│   │   │   └── b47c18d84d3c8e7a81750c1399be136428316a
+│   │   ├── 6b
+│   │   │   └── 717ad346d3dff8914e9545038c799226d59c89
+│   │   ├── 70
+│   │   │   └── ae5b424e44b9a19c6c04af80d64969730fe30c
+│   │   ├── 71
+│   │   │   └── 8d6fea4835ec2d246af9800eddb7ffb276240c
+│   │   ├── 76
+│   │   │   └── e8179a777836e6f3e177cf0dcdc6e89195a737
+│   │   ├── 77
+│   │   │   └── 053960334e2e34dc584dea8019925c3b4ccca9
+│   │   ├── 7a
+│   │   │   └── 5180bdbd05174b93cfcd80d936d87d1bfda378
+│   │   ├── 7b
+│   │   │   └── f337d3342562c52bd3c895d39bc5cd3d94beb1
+│   │   ├── 80
+│   │   │   └── a9b9b2b2ee6cf10272f48a99da48f0440a4d2d
+│   │   ├── 8c
+│   │   │   └── ec56eeab344ed2aced37a33ca31791aca060bf
+│   │   ├── 9c
+│   │   │   └── e30e30567350db1b243fc10c91f0e0c2bde289
+│   │   ├── a1
+│   │   │   └── 6f0f39b4a952e49e34fc63ce7eb7cce1392716
+│   │   ├── b1
+│   │   │   └── c15c797371d33f80c05c83ceaed6cdc4f677e4
+│   │   ├── b2
+│   │   │   └── b2a44f6ebc70c450043c05a002e7a93ba5d651
+│   │   ├── b5
+│   │   │   └── 22c25eec086c8c4e7d0ee4da92f86c8e5aaf64
+│   │   ├── c4
+│   │   │   └── 3a6c78c3f40e317cc0ad2423a713c238d94886
+│   │   ├── c8
+│   │   │   └── 8f389de09f418da376598c42e8788d4fb6d172
+│   │   ├── d3
+│   │   │   └── 8f8dce98df8ce654dbe1ffd670ac1b0f67f8fd
+│   │   ├── db
+│   │   │   └── ccb8e063b5a7a81d9b7a7fc35576ef6cf950ed
+│   │   ├── e4
+│   │   │   └── 70d26094f5e75b6b3861fc3a96a4a404c03f86
+│   │   ├── e5
+│   │   │   └── 55820ce416f629a05f3c2ada9a640cc7d2ac91
+│   │   ├── e6
+│   │   │   └── 56e14bbf8c0866e2a4671fb01ea244e3b84334
+│   │   ├── f2
+│   │   │   └── ec8032d105620b02f5f6b19d3a212392559dfd
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       │   └── main
+│       ├── remotes
+│       │   └── origin
+│       │       └── main
+│       └── tags
+├── .gitignore
+├── jsconfig.json
+├── next.config.mjs
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── public
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── README.md
+└── tailwind.config.mjs
+
+63 directories, 90 files
