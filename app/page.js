@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import PostList from "@/app/ui/post-list"
 
