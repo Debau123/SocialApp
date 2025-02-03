@@ -15,8 +15,20 @@ export async function createPost(formData) {
   const content = formData.get("content");
  
   //guardar el post en la base de datos
-  await sql`INSERT INTO POST(content, url) 
+  await sql`INSERT INTO sa_posts(content, url) 
   VALUES(
     ${content}, 
     ${url})`;
 }
+export async function insertLike(post_id, user_id) {
+
+  //guardar el like en la base de datos
+  sql `INSERT INTO sa_likes(post_id, user_id) 
+  
+  VALUES (
+    ${post_id},
+    ${user_id} 
+    ) `
+}
+
+
