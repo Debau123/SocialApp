@@ -30,5 +30,10 @@ export async function insertLike(post_id, user_id) {
     ${user_id} 
     ) `
 }
+export async function removeLike(post_id, user_id) {
+  //guardar el like en la base de datos
+  sql`DELETE FROM sa_likes 
+    WHERE post_id = ${post_id} AND user_id = ${user_id}`;
+}
 
 
