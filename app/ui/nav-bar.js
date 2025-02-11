@@ -1,8 +1,8 @@
-"use client"; 
+"use client";
 import NavLink from "./nav-link";
-import { HomeIcon, SearchIcon, UserIcon, CameraIcon, LayoutGridIcon } from "lucide-react";
+import { HomeIcon, SearchIcon, UserIcon, CameraIcon, LayoutGridIcon, LogOutIcon } from "lucide-react";
 
-export default function NavBar() {
+export default function NavBar({ session }) {
   return (
     <nav className="flex flex-col gap-6 sticky top-0 h-screen w-48 border-r p-4 shadow-md shadow-gray-400 dark:shadow-gray-600">
       {/* Logo */}
@@ -21,6 +21,17 @@ export default function NavBar() {
         <NavLink ruta="/browse" texto="Browse" Icono={LayoutGridIcon} />
         <NavLink ruta="/profile" texto="Profile" Icono={UserIcon} />
         <NavLink ruta="/create" texto="Create" Icono={CameraIcon} />
+      </div>
+
+      {/* Botón de Logout */}
+      <div className="mt-auto">
+        <a
+          href="/auth/logout"
+          className="flex items-center gap-2 text-red-500 hover:text-red-700 transition"
+        >
+          <LogOutIcon className="w-5 h-5" />
+          Logout
+        </a>
       </div>
     </nav>
   );

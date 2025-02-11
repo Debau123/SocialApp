@@ -1,39 +1,44 @@
-"use server";
+'use server'
 
-import { put } from "@vercel/blob";
-import { sql } from "@vercel/postgres";
+import { put } from "@vercel/blob"
+import { sql } from "@vercel/postgres"
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+import { auth0, uid } from "./auth0";
 
-//accion para el formulario de crear post
-export async function createPost(formData) {
 
-  //guardar la imagen en el bucket
-  const { url } = await put("media", formData.get("media"), {
-    access: "public",
-  });
+export async function createPost(formData){
 
-  //variables del contenido
-  const content = formData.get("content");
- 
-  //guardar el post en la base de datos
-  await sql`INSERT INTO sa_posts(content, url) 
-  VALUES(
-    ${content}, 
-    ${url})`;
-}
-export async function insertLike(post_id, user_id) {
+    const user_id = (await auth0.getSession()).user.user_id;
 
-  //guardar el like en la base de datos
-  sql `INSERT INTO sa_likes(post_id, user_id) 
-  
-  VALUES (
-    ${post_id},
-    ${user_id} 
-    ) `
-}
-export async function removeLike(post_id, user_id) {
-  //guardar el like en la base de datos
-  sql`DELETE FROM sa_likes 
-    WHERE post_id = ${post_id} AND user_id = ${user_id}`;
+    const { url } = await put(
+        'media', 
+        formData.get("media"), 
+        { access: 'public'}
+    );
+    const content = formData.get('content');
+    await sql`INSERT INTO sa_posts(content, url, user_id) 
+        VALUES(
+            ${content},
+            ${url},
+            ${user_id}
+        )`
+
+        revalidatePath('/');
+        redirect('/');
 }
 
+export async function insertLike(post_id, user_id){
 
+    await sql`INSERT INTO sa_likes(post_id, user_id) VALUES (
+        ${post_id},  
+        ${user_id}
+    )`
+}
+
+export async function removeLike(post_id, user_id){
+
+    await sql`DELETE FROM sa_likes 
+        WHERE post_id = ${post_id} AND user_id = ${user_id}
+    `
+}

@@ -1,21 +1,19 @@
-import { auth0 } from "../lib/auth0";
-import { getPosts } from "../lib/data";
-import Post from "./post"; // Nombre en minúsculas
-import { ChatBubbleOvalLeftIcon, HeartIcon } from "@heroicons/react/24/outline";
+import Post from "./post"
 
+export default async ({posts, user_id, likes}) => {
 
-export default async function PostList() {
+    return (
+        <div className="flex flex-col grow items-center gap-16">
+            { 
+                posts.map(post => (<Post 
 
-  //obtener los datos
-  const posts = await getPosts();
+                    key={post.post_id} 
 
-  const {user_id}= (await auth0.getSession()).user;
-
-  return (
-    <div className="flex flex-col grow gap-16 mt-16 items-center">
-      {posts.map( post => (
-        <Post key={post.post_id} user_id= {user_id} post_id={post.post_id} content={post.content} url={post.url}/>
-      ))}
-    </div>
-  );
+                    post={post}
+                    user_id={user_id} 
+                    isLikedInitial={likes.find(like => like.post_id === post.post_id)}
+                />))
+            }
+        </div>
+    )
 }
