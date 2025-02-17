@@ -31,6 +31,16 @@ export default async function Seed() {
         PRIMARY KEY (user_id, post_id)
       )
     `;
+    await sql`
+      CREATE TABLE IF NOT EXISTS sa_comments (
+      comment_id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      content TEXT NOT NULL,
+      user_id UUID REFERENCES sa_users(user_id) ON DELETE CASCADE,
+      post_id UUID REFERENCES sa_posts(post_id) ON DELETE CASCADE,
+      parent_comment_id UUID REFERENCES sa_comments(comment_id) ON DELETE CASCADE, -- Elimina respuestas automáticamente
+      created_at TIMESTAMP DEFAULT now()
+    )`;
+    
 
     return <p>Database seeded successfully.</p>;
   } catch (error) {
