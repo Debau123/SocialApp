@@ -67,4 +67,16 @@ export async function createComment(formData) {
       }
       
   }
+  export async function deleteComment(comment_id) {
+    try {
+        await sql`
+            DELETE FROM sa_comments WHERE comment_id = ${comment_id}
+        `;
+
+        revalidatePath('/post/'); // Actualiza la página después de eliminar
+    } catch (error) {
+        console.error("Error al eliminar el comentario:", error);
+        throw new Error("No se pudo eliminar el comentario.");
+    }
+}
   
